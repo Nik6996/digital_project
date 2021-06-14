@@ -362,7 +362,7 @@
 
 	&__min, &__max {
 		padding: 10px 0px 0px 0px ;
-		font-family:'TT Hoves';
+		font-family:"TT Hoves";
         font-size: 24px;
         line-height: 24px;
 		color: #BDBDBD;
@@ -379,7 +379,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-family: TT Hoves;
+		font-family: "TT Hoves";
 width: 222px;
 height: 71px;
 position: relative;
@@ -478,7 +478,7 @@ img{
 
 	&__title {
 	white-space: nowrap;
-    font-family: TT Hoves;
+    font-family: "TT Hoves";
     font-weight: 300;
     font-size: 64px;
     line-height: 64px;
@@ -497,7 +497,7 @@ img{
 		display: block;
 		position: relative;
 		padding: 0px 10px 20px 10px ;
-		font-family: TT Hoves;
+		font-family: "TT Hoves";
         font-weight: 300;
         font-size: 16px;
         line-height: 25px;
@@ -514,7 +514,7 @@ img{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-family: TT Hoves;
+		font-family: "TT Hoves";
 width: 222px;
 height: 71px;
 background-color: rgb(255, 255, 255);
@@ -541,14 +541,14 @@ max-width: 1170px;
 	&__title {
 		padding: 0px 10px 0px 10px ;
 		margin: 120px 0px 0px 0px ;
-		font-family: TT Hoves;
-font-weight: 300;
-font-size: 64px;
-line-height: 64px;
-color: #BDBDBD;
-@media (max-width: 550px) {
-	font-size: 40px;
-	margin: 40px 0px 0px 0px ;
+		font-family: "TT Hoves";
+        font-weight: 300;
+        font-size: 64px;
+        line-height: 64px;
+        color: #BDBDBD;
+        @media (max-width: 550px) {
+     	font-size: 40px;
+	    margin: 40px 0px 0px 0px ;
 }
 	}
 
@@ -563,20 +563,20 @@ color: #BDBDBD;
 		position: absolute;
 		top: 0;
 		left: 0;
-		font-family: SF Pro Display;
-font-weight: 900;
-font-size: 200px;
-display: flex;
-align-items: center;
-color: #F2F2F2;
-@media (max-width: 550px) {
+		font-family: "TT Hoves";
+        font-weight: 900;
+        font-size: 200px;
+        display: flex;
+        align-items: center;
+        color: #F2F2F2;
+        @media (max-width: 550px) {
 	
 }
 	}
 
 	&__text {
-		padding: 25px 10px 0px 100px ;
-		font-family: TT Hoves;
+		padding: 25px 10px 0px 120px ;
+		font-family: "TT Hoves";
 font-size: 22px;
 line-height: 36px;
 color: #333333;
@@ -584,6 +584,9 @@ min-height: 200px;
 @media (max-width: 550px) {
 	line-height: 26px;
 }
+	}
+	&__text._text{
+max-width: 379px;
 	}
 }
 
@@ -598,7 +601,7 @@ max-width: 1170px;
 	&__title{
 		margin-top: 20px;
 		padding: 0px 10px ;
-		font-family: TT Hoves;
+		font-family: "TT Hoves";
         font-weight: 300;
         font-size: 64px;
         line-height: 64px;
@@ -606,7 +609,7 @@ max-width: 1170px;
         margin-bottom: 60px;
 		@media (max-width: $md3+px) {
 			margin-bottom: 0;
-			font-size: 47px;
+			font-size: 43px;
 		}
 	}
 
@@ -674,7 +677,7 @@ padding: 20px ;
 	&__title { 	
 
     span{
-	font-family: TT Hoves;
+	font-family: "TT Hoves";
     font-weight: bold;
 	font-size: calc(8px + 46 * (100vw / 1920));
     color: #FFFFFF;
@@ -726,7 +729,7 @@ margin-bottom: 120px;
 	&__title {
 		margin-top: 120px;
 		margin-bottom: 22px;
-		font-family: TT Hoves;
+		font-family: "TT Hoves";
 font-weight: 300;
 font-size: 64px;
 line-height: 64px;
@@ -832,7 +835,7 @@ display: none;
 		cursor: pointer;
 		position: relative;
 		display: inline-flex;
-    font-family: TT Hoves;
+    font-family: "TT Hoves";
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.03em;
@@ -907,7 +910,7 @@ display: none;
 	}
 	
 	&__title {
-	font-family: TT Hoves;
+	font-family: "TT Hoves";
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
@@ -934,11 +937,16 @@ display: none;
 			margin-top: 5px ;
 		}
     a{	
-		font-family: TT Hoves;
+		font-family: "TT Hoves";
         font-weight: 500;
         font-size: 14px;
         line-height: 24px;
 	    color: #ffff;
+		
+			&:hover{
+				text-decoration: underline;
+			}
+		
 }
 	}
 }
@@ -956,7 +964,7 @@ ul{
 	&__location, &__number, &__e-mail {
 
 		a{
-			font-family: TT Hoves;
+			font-family: "TT Hoves";
 			font-weight: 500;
 			font-size: 14px;
 			line-height: 24px;
@@ -966,7 +974,7 @@ ul{
 	}
 	&__location {
 		max-width: 240px;
-		font-family: TT Hoves;
+		font-family: "TT Hoves";
         font-weight: 500;
         font-size: 14px;
         line-height: 24px;
@@ -978,6 +986,7 @@ ul{
 		@media (max-width: 768px) {
 			margin-bottom: 28px;
 		}
+
 	}
 
 	&__number {
@@ -1002,6 +1011,9 @@ ul{
 		margin: 0px 20px 0px 0px ;
 		@media (max-width: 768px) {
 			margin: 0px 0px 0px 0px ;
+		}
+        &:hover{
+			transform: scale(1.2);
 		}
 	}
 }

@@ -295,7 +295,7 @@ h6 {
 .slider__min,
 .slider__max {
   padding: 10px 0px 0px 0px;
-  font-family: 'TT Hoves';
+  font-family: "TT Hoves";
   font-size: 24px;
   line-height: 24px;
   color: #BDBDBD;
@@ -312,7 +312,7 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   width: 222px;
   height: 71px;
   position: relative;
@@ -406,7 +406,7 @@ h6 {
 
 .info__title {
   white-space: nowrap;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 300;
   font-size: 64px;
   line-height: 64px;
@@ -420,7 +420,7 @@ h6 {
   display: block;
   position: relative;
   padding: 0px 10px 20px 10px;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 300;
   font-size: 16px;
   line-height: 25px;
@@ -438,7 +438,7 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   width: 222px;
   height: 71px;
   background-color: white;
@@ -464,7 +464,7 @@ h6 {
 .task__title {
   padding: 0px 10px 0px 10px;
   margin: 120px 0px 0px 0px;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 300;
   font-size: 64px;
   line-height: 64px;
@@ -486,7 +486,7 @@ h6 {
   position: absolute;
   top: 0;
   left: 0;
-  font-family: SF Pro Display;
+  font-family: "TT Hoves";
   font-weight: 900;
   font-size: 200px;
   display: -webkit-box;
@@ -499,12 +499,16 @@ h6 {
 }
 
 .task__text {
-  padding: 25px 10px 0px 100px;
-  font-family: TT Hoves;
+  padding: 25px 10px 0px 120px;
+  font-family: "TT Hoves";
   font-size: 22px;
   line-height: 36px;
   color: #333333;
   min-height: 200px;
+}
+
+.task__text._text {
+  max-width: 379px;
 }
 
 .project__container {
@@ -514,7 +518,7 @@ h6 {
 .project__title {
   margin-top: 20px;
   padding: 0px 10px;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 300;
   font-size: 64px;
   line-height: 64px;
@@ -566,7 +570,7 @@ h6 {
 }
 
 .hover-project__title span {
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: bold;
   font-size: calc(8px + 46 * (100vw / 1920));
   color: #FFFFFF;
@@ -612,7 +616,7 @@ h6 {
 .forms__title {
   margin-top: 120px;
   margin-bottom: 22px;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 300;
   font-size: 64px;
   line-height: 64px;
@@ -728,7 +732,7 @@ h6 {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.03em;
@@ -811,7 +815,7 @@ h6 {
 }
 
 .footer__title {
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
@@ -838,11 +842,15 @@ h6 {
 }
 
 .footer-info__link a {
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   color: #ffff;
+}
+
+.footer-info__link a:hover {
+  text-decoration: underline;
 }
 
 .footer-contacts__list {
@@ -861,7 +869,7 @@ h6 {
 .footer-contacts__location a,
 .footer-contacts__number a,
 .footer-contacts__e-mail a {
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -871,7 +879,7 @@ h6 {
 
 .footer-contacts__location {
   max-width: 240px;
-  font-family: TT Hoves;
+  font-family: "TT Hoves";
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -905,6 +913,12 @@ h6 {
 .footer-sites__link {
   padding: 0px 5px;
   margin: 0px 20px 0px 0px;
+}
+
+.footer-sites__link:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .footer-logo img {
@@ -1134,7 +1148,7 @@ h6 {
 
   .project__title {
     margin-bottom: 0;
-    font-size: 47px;
+    font-size: 43px;
   }
 
   .project__image {

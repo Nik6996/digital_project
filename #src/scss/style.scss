@@ -36,6 +36,19 @@
     font-weight: 300;
     font-style: normal;
 }
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFProDisplay-Heavy.eot');
+    src: local('../fonts/SF_Pro/SF Pro Display Heavy'), local('SFProDisplay-Heavy'),
+        url('../fonts/SFProDisplay-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SFProDisplay-Heavy.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Heavy.woff') format('woff'),
+        url('../fonts/SFProDisplay-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
 
 
 //&subset=cyrillic-ext
@@ -111,6 +124,13 @@
 		letter-spacing: 0.2;	
 		}
 			}
+			@media (min-width: 768px) {
+							&:hover{
+				box-shadow: 0px 10px 10px #333333;
+				background-color: rgb(85, 83, 83);
+			}
+			}
+
 }
 
 //===================================ШАПКА=====================================
@@ -286,6 +306,7 @@
 	}
 
 	&__nav {
+
 		padding: 0px 10px;
 		display: flex;
 		flex-direction: column;
@@ -305,7 +326,9 @@
 				line-height: 30px;
 			}
 		}
+
 	}
+	
 
 	&__title {
 	}
@@ -324,8 +347,16 @@
 		}
 	}
 
+    &__arrow{
+		background: url(../img/icons/arrows.svg) center no-repeat;
+		width: 20px;
+		height: 20px;
+	}
+
+	&__next{
+		transform: rotate(180deg);
+	}
 	&__prev, &__next {
-		
 		cursor: pointer;
 		font-size: 20px;
 		display: flex;
@@ -333,7 +364,10 @@
 		align-items: center;
 		width: 53px;
 		height: 53px;
-		background-color: #F2F2F2;
+		
+		background-color: #FFFFFF;
+		border: 1px solid #F2F2F2;
+		
 		&:last-child{
 			margin: 0px 0px 0px 23px;
 		}
@@ -341,16 +375,22 @@
 			width: 30px;
 			height: 30px;
 		}
+		&:hover{
+			background-color: #F2F2F2;
+		}
 	}
 
 	
 
 	&__counter {
+		position: relative;
 		width: 100px;
 		display: flex;
 		justify-content: space-between;
 		margin: 0px 40px 100px 0px;
 		span{
+            position: absolute;
+			left: 50px;
 			height: 45px;
 			border-right: 2px solid #E0E0E0;
             transform: rotate(45deg);
@@ -391,12 +431,21 @@ line-height: 12px;
 letter-spacing: 0.2em;
 text-transform: uppercase;
 color: #333333;
+transition: 0.4s;
 @media (max-width: 550px) {
 	width: 111px;
 	height: 35px;
 	font-size: 9px;
 	line-height: 9px;
 	top: -35px;
+}
+@media (min-width: 768px) {
+	&:hover{
+		transition: 0.4s;
+		background-color: rgb(119, 119, 119);
+		color: #F2F2F2;
+		box-shadow: 0 5px 5px rgb(43, 42, 42) ;
+	}
 }
 	}
 
@@ -510,6 +559,8 @@ img{
 	}
 
 	&__button {
+		position: relative;
+        top: -10px;
 		cursor: pointer;
 		display: flex;
 		justify-content: center;
@@ -526,7 +577,14 @@ color: #333333;
 @media (max-width: 1100px) {
 margin: 0 auto;
 }
-
+@media (min-width: 768px) {
+	&:hover{
+		transition: 0.4s;
+		background-color: rgb(119, 119, 119);
+		color: #F2F2F2;
+		box-shadow: 0 5px 5px rgb(43, 42, 42) ;
+	}
+}
 	}
 }
 
@@ -540,14 +598,15 @@ max-width: 1170px;
 
 	&__title {
 		padding: 0px 10px 0px 10px ;
-		margin: 120px 0px 0px 0px ;
+		margin: 120px 0px 40px 0px ;
 		font-family: "TT Hoves";
         font-weight: 300;
         font-size: 64px;
         line-height: 64px;
         color: #BDBDBD;
         @media (max-width: 550px) {
-     	font-size: 40px;
+			white-space: nowrap;
+     	font-size: 36px;
 	    margin: 40px 0px 0px 0px ;
 }
 	}
@@ -563,19 +622,19 @@ max-width: 1170px;
 		position: absolute;
 		top: 0;
 		left: 0;
-		font-family: "TT Hoves";
+		font-family: "SF Pro Display";
         font-weight: 900;
         font-size: 200px;
         display: flex;
         align-items: center;
         color: #F2F2F2;
         @media (max-width: 550px) {
-	
+	        font-size: 170px;
 }
 	}
 
 	&__text {
-		padding: 25px 10px 0px 120px ;
+		padding: 3px 10px 0px 135px ;
 		font-family: "TT Hoves";
 font-size: 22px;
 line-height: 36px;
@@ -583,10 +642,11 @@ color: #333333;
 min-height: 200px;
 @media (max-width: 550px) {
 	line-height: 26px;
+	padding: 3px 10px 0px 110px ;
 }
 	}
 	&__text._text{
-max-width: 379px;
+    max-width: 413px;
 	}
 }
 
@@ -596,6 +656,7 @@ max-width: 379px;
 
 	&__container {
 max-width: 1170px;
+position: relative;
 	}
 
 	&__title{
@@ -619,6 +680,7 @@ max-width: 1170px;
 	}
 
 	&__hover {
+		cursor: pointer;
         opacity: 0;
 		transition: 0.5s;
 		position: absolute;
@@ -654,8 +716,12 @@ max-width: 1170px;
         background-color: #333333;
 		position: absolute;
 		right: 15px;
-		
+		bottom: -85px;
+		@media (max-width: 768px) {
+			bottom: -45px;
+		}
     }
+
 	}
 
 
@@ -712,7 +778,7 @@ padding: 20px ;
 	}
 }
 
-//=============FORMS=================
+//==========================================================FORMS====================================================
 .forms {
 margin-bottom: 120px;
 	&__container {
@@ -720,7 +786,9 @@ margin-bottom: 120px;
 		padding: 0px 10px ;
 	}
 	&__image{
-		margin-left: 30px;
+		margin-left: 20px;
+		width: 749px;
+		height: 369px;
 		@media (max-width: 767px) {
 			display: none;
 		}
@@ -734,6 +802,11 @@ font-weight: 300;
 font-size: 64px;
 line-height: 64px;
 color: #BDBDBD;
+@media (max-width: 768px) {
+	font-size: 36px;
+	margin-top: 60px;
+	margin-bottom: 18px;
+}
 	}
 
 	&__row {
@@ -786,6 +859,7 @@ position: relative;
 	}
 
 	&__lable {
+
 	}
 
 	&__input {
@@ -796,6 +870,7 @@ position: relative;
 		&:last-child{
 			padding: 10px 20px ;
 		}
+
 	}
 	&__input._error{
 		box-shadow: 0 0 5px red;
@@ -906,7 +981,7 @@ display: none;
         font-size: 12px;
         line-height: 22px;
         color: rgba(200, 200, 200, 0.5);
-        border: 1px solid #4c4848;
+        border-top: 1px solid #4c4848;
 	}
 	
 	&__title {
@@ -957,9 +1032,7 @@ display: none;
 		display: flex;
         justify-content: space-between;
         flex-direction: column;
-ul{
-	
-}
+
 	}
 	&__location, &__number, &__e-mail {
 
@@ -973,7 +1046,7 @@ ul{
 		}
 	}
 	&__location {
-		max-width: 240px;
+		max-width: 280px;
 		font-family: "TT Hoves";
         font-weight: 500;
         font-size: 14px;
@@ -1007,14 +1080,17 @@ ul{
 	}
 
 	&__link {
-			padding: 0px 5px ;
+		padding: 0px 5px ;
 		margin: 0px 20px 0px 0px ;
 		@media (max-width: 768px) {
 			margin: 0px 0px 0px 0px ;
 		}
-        &:hover{
+		@media (min-width: 768px) {
+		        &:hover{
 			transform: scale(1.2);
+		}	
 		}
+
 	}
 }
 .footer-logo{

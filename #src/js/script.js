@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	function rollSlider() {
 		sliderLine.style.transform = 'translate(-' + count * width + 'px) ';
+		window.addEventListener('resize', init);
+		init();
 	}
 
 });

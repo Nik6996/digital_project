@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 	}
+
+	//-----------------------------------валидация регистрации----------------------------------//
 	function formValidate(form) {
 		let error = 0;
 		let formReq = document.querySelectorAll('._req');
@@ -148,45 +150,41 @@ function phoneTest(input) {
 	return !/^(?:\(\d{3}\)|\d{3})(?: *- *)?\d{3}(?: *- *)?\d{4}$/.test(input.value);
 }
 
-//-----------------------------------валидация регистрации----------------------------------//
+//-----------------------------------АНИМАЦИЯ----------------------------------//
 
+const animItems = document.querySelectorAll('._anim-items');
 
-	// // let sliderNext = document.querySelector('.slider__next');
-	// // let sliderPrev = document.querySelector('.slider__prev');
-	// // let sliderPlus = document.querySelector('slider__min');
-	// // let sliderMinus = document.querySelector('slider__max');
-	// const slide = document.querySelectorAll('.slider__image');
-	// let swiperrContainer = document.querySelector('.sliders');
-	// let count = 0;
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll)
+	function animOnScroll() {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 4;
 
-	// function init() {
-	// 	//console.log('resize');
-	// 	width = document.querySelector('.sliders').offsetWidth;
-	// 	swiperrContainer.style.width = width * slide.length + 'px';
-	// 	slide.forEach(item => {
-	// 		item.style.width = width + 'px';
-	// 		item.style.height = 'auto';
-	// 		rollSlider();
-	// 	})
-	// 	//console.log();
-	// }
-	// window.addEventListener('resize', init);
-	// init();
-	// document.querySelector('.slider__prev').addEventListener('click', function () {
-	// 	count--;
-	// 	if (count < 0) {
-	// 		count = slide.length - 1;
-	// 	}
-	// 	rollSlider();
-	// });
-	// document.querySelector('.slider__next').addEventListener('click', function () {
-	// 	count++;
-	// 	if (count >= slide.length) {
-	// 		count = 0;
-	// 	}
-	// 	rollSlider();
-	// });
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
 
-	// function rollSlider() {
-	// 	swiperrContainer.style.transform = 'translate(-' + count * width + 'px) ';
-	// }
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				animItem.classList.add('_active');
+			} else {
+				if (!animItem.classList.contains('_stop-anim')) {
+					animItem.classList.remove('_active');
+				}
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrolltop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top + scrolltop, left: rect.left + scrollLeft }
+	}
+	setTimeout(() => {
+		animOnScroll();
+	}, 500)
+
+}

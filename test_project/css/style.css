@@ -36,6 +36,7 @@
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 * {
@@ -154,6 +155,9 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 00.4s;
+  -o-transition: 00.4s;
+  transition: 00.4s;
 }
 
 .btn span {
@@ -245,6 +249,23 @@ h6 {
   font-weight: bold;
   font-size: calc(24px + 40 * (100vw / 1440));
   line-height: 64px;
+}
+
+.slider__title {
+  -webkit-transform: translate(-60%) rotate(-45deg);
+      -ms-transform: translate(-60%) rotate(-45deg);
+          transform: translate(-60%) rotate(-45deg);
+  opacity: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.slider__title._active {
+  -webkit-transform: translate(0px) rotate(0);
+      -ms-transform: translate(0px) rotate(0);
+          transform: translate(0px) rotate(0);
+  opacity: 1;
 }
 
 .slider__buttons {
@@ -359,11 +380,25 @@ h6 {
 }
 
 .slider__sliders {
+  -webkit-transform: translate(60%) rotate(45deg);
+      -ms-transform: translate(60%) rotate(45deg);
+          transform: translate(60%) rotate(45deg);
+  opacity: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   max-width: 770px;
+}
+
+.slider__sliders._active {
+  -webkit-transform: translate(0) rotate(0);
+      -ms-transform: translate(0) rotate(0);
+          transform: translate(0) rotate(0);
+  opacity: 1;
 }
 
 .slider__line {
@@ -402,13 +437,27 @@ h6 {
 }
 
 .info__column1 {
+  opacity: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 400px;
           flex: 1 1 400px;
   padding: 0px 10px 0px 0px;
 }
 
+.info__column1._active {
+  opacity: 1;
+}
+
 .info__image1 {
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
   text-align: center;
   padding: 30px 0px 0px 100px;
 }
@@ -417,7 +466,20 @@ h6 {
   max-width: 100%;
 }
 
+.info__image1._active {
+  -webkit-transform: scale(100%);
+      -ms-transform: scale(100%);
+          transform: scale(100%);
+}
+
 .info__image2 {
+  opacity: 0;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   text-align: center;
   position: relative;
   top: 30px;
@@ -428,12 +490,33 @@ h6 {
   max-width: 100%;
 }
 
+.info__image2._active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
 .info__image3 {
+  opacity: 0;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
   padding: 60px 30px 0px 30px;
 }
 
 .info__image3 img {
   max-width: 100%;
+}
+
+.info__image3._active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
 }
 
 .info__title {
@@ -496,6 +579,13 @@ h6 {
 }
 
 .task__title {
+  opacity: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   padding: 0px 10px 0px 10px;
   margin: 120px 0px 40px 0px;
   font-family: "TT Hoves";
@@ -503,6 +593,13 @@ h6 {
   font-size: 64px;
   line-height: 64px;
   color: #BDBDBD;
+}
+
+.task__title._active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .task__column {
@@ -517,6 +614,13 @@ h6 {
 }
 
 .task__num {
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-transform: rotate(-360deg);
+      -ms-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+  opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -530,6 +634,13 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   color: #F2F2F2;
+}
+
+.task__num._active {
+  opacity: 1;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
 }
 
 .task__text {
@@ -550,7 +661,48 @@ h6 {
   position: relative;
 }
 
+.project__anim-left {
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.8s ease 0.5s;
+  -o-transition: all 0.8s ease 0.5s;
+  transition: all 0.8s ease 0.5s;
+  opacity: 0;
+}
+
+.project__anim-left._active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.project__anim-right {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 0.8s ease 1s;
+  -o-transition: all 0.8s ease 1s;
+  transition: all 0.8s ease 1s;
+  opacity: 0;
+}
+
+.project__anim-right._active {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
 .project__title {
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   margin-top: 20px;
   padding: 0px 10px;
   font-family: "TT Hoves";
@@ -559,6 +711,13 @@ h6 {
   line-height: 64px;
   color: #BDBDBD;
   margin-bottom: 60px;
+}
+
+.project__title._active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .project__row {
@@ -623,9 +782,15 @@ h6 {
   text-transform: uppercase;
   color: #FFFFFF;
   margin: 14px 0px 0px 0px;
+  -webkit-transition: 00.4s;
+  -o-transition: 00.4s;
+  transition: 00.4s;
 }
 
 .hover-project__btn:hover {
+  -webkit-transition: 00.4s;
+  -o-transition: 00.4s;
+  transition: 00.4s;
   text-decoration: underline;
 }
 
@@ -647,12 +812,31 @@ h6 {
 }
 
 .forms__image {
+  -webkit-transform: scale(0.01);
+      -ms-transform: scale(0.01);
+          transform: scale(0.01);
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
   margin-left: 20px;
   width: 749px;
   height: 369px;
 }
 
+.forms__image._active {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
 .forms__title {
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   margin-top: 120px;
   margin-bottom: 22px;
   font-family: "TT Hoves";
@@ -660,6 +844,13 @@ h6 {
   font-size: 64px;
   line-height: 64px;
   color: #BDBDBD;
+}
+
+.forms__title._active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .forms__row {
@@ -686,7 +877,18 @@ h6 {
 }
 
 .form__body {
+  opacity: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
   margin: 0 auto;
+}
+
+.form__body._active {
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  opacity: 1;
 }
 
 .form__body::after {
@@ -696,7 +898,7 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(211, 206, 211, 0.3);
+  background: rgba(153, 149, 153, 0.438) url(../img/loading.gif) center/70px no-repeat;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.7s ease 0s;
@@ -960,6 +1162,9 @@ h6 {
 
 @media (min-width: 768px) {
   .btn:hover {
+    -webkit-transition: 00.4s;
+    -o-transition: 00.4s;
+    transition: 00.4s;
     -webkit-box-shadow: 0px 10px 10px #333333;
             box-shadow: 0px 10px 10px #333333;
     background-color: #555353;
@@ -993,6 +1198,9 @@ h6 {
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
             transform: scale(1.2);
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
   }
 }
 
@@ -1169,6 +1377,11 @@ h6 {
     margin: 0px 40px 20px 0px;
   }
 
+  .task__text {
+    line-height: 26px;
+    padding: 3px 10px 0px 140px;
+  }
+
   .project__hover {
     visibility: hidden;
   }
@@ -1258,11 +1471,6 @@ h6 {
 
   .task__num {
     font-size: 170px;
-  }
-
-  .task__text {
-    line-height: 26px;
-    padding: 3px 10px 0px 110px;
   }
 
   .hover-project__content {
